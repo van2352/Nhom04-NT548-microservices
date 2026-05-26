@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB = "tuongvan23521768"
+	KUBECONFIG = "/var/lib/jenkins/.kube/config"
     }
 
     stages {
