@@ -5,14 +5,6 @@ pipeline {
         DOCKERHUB = "tuongvan23521768"
     }
 
-    stages {
-
-        stage('Clone Source') {
-            steps {
-                git 'https://github.com/van2352/Nhom04-NT548-microservices.git'
-            }
-        }
-
         stage('SonarQube Scan') {
             steps {
                 withSonarQubeEnv('SonarQube') {
