@@ -5,6 +5,7 @@ pipeline {
         DOCKERHUB = "tuongvan23521768"
     }
 
+    stages {
         stage('SonarQube Scan') {
             steps {
                 withSonarQubeEnv('SonarQube') {
@@ -43,6 +44,7 @@ pipeline {
                 kubectl apply -f k8s/
                 kubectl rollout restart deployment/user-service
                 kubectl rollout restart deployment/product-service
+                kubectl get pods
                 '''
             }
         }
